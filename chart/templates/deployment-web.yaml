@@ -67,6 +67,10 @@ spec:
                 secretKeyRef:
                   name: {{ default .Values.nextAuthSecret "nextauth-secret" }}
                   key: secret
+          {{- if and .Values.web .Values.web.envFrom }}
+          envFrom:
+            {{- toYaml .Values.web.envFrom | nindent 12 }}
+          {{- end }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
