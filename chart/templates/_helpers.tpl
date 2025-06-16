@@ -81,18 +81,6 @@ Persistence resources
 {{- end }}
 
 {{/*
-NextAuth URL
-Return the primary ingress host if enabled and defined; otherwise, return "localhost".
-*/}}
-{{- define "karakeep.nextAuthURL" -}}
-{{- if and .Values.ingress.enabled (gt (len .Values.ingress.hosts) 0) (index .Values.ingress.hosts 0).host }}
-  {{- (index .Values.ingress.hosts 0).host | quote -}}
-{{- else -}}
-  "localhost"
-{{- end -}}
-{{- end }}
-
-{{/*
 Return an env var definition for OPENAI_API_KEY if .Values.openAIApiKey is set.
 */}}
 {{- define "karakeep.openaiApiKey" -}}

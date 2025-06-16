@@ -60,8 +60,6 @@ spec:
               value: http://{{ include "karakeep.fullname" . }}-chrome:9222
             - name: DATA_DIR
               value: {{ include "karakeep.persistenceVolumeMountPath" . }}
-            - name: NEXTAUTH_URL
-              value: {{ include "karakeep.nextAuthURL" . }}
             - name: NEXTAUTH_SECRET
               valueFrom:
                 secretKeyRef:
