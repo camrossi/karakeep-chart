@@ -141,13 +141,13 @@ affinity: {}
 # https://docs.karakeep.app/configuration/
 # https://github.com/karakeep-app/karakeep/blob/main/packages/shared/config.ts
 
-web:
-  envFrom:
-    - secretRef:
-        name: secret-name
-    - configMapRef:
-        name: config-map-name
-
+#web:
+#  envFrom:
+#    - secretRef:
+#        name: secret-name
+#    - configMapRef:
+#        name: config-map-name
+#
 #   extraEnv:
 #     DATA_DIR: /data
 
